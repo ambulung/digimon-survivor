@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvrmuqhr3xrdk"]
+[gd_scene load_steps=9 format=3 uid="uid://cvrmuqhr3xrdk"]
 
 [ext_resource type="Script" uid="uid://gee42008gf54" path="res://scripts/digimon1/digimon1.gd" id="1_uvwwe"]
 [ext_resource type="PackedScene" uid="uid://dua5fx5sn7b2r" path="res://digimonScene/digimon1/projectile1.tscn" id="2_10ol1"]
@@ -15,8 +15,12 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_267s6"]
 bg_color = Color(1, 0, 0.137255, 1)
 
-[node name="digimon1" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_267s6"]
+radius = 13.0
+
+[node name="digimon1" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
+collision_mask = 0
 script = ExtResource("1_uvwwe")
 speed = 30.0
 botamon_attack_scene = ExtResource("2_10ol1")
@@ -27,20 +31,21 @@ koromon_sprite_frames = ExtResource("4_oa8c4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_267s6")
 animation = &"attack"
-frame_progress = 0.590556
+frame_progress = 0.334392
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_8m5vj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.1
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,3 +60,13 @@ grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_10ol1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_267s6")
 show_percentage = false
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_267s6")
+
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://5ascoxogjx0w"]
+
+[ext_resource type="Script" uid="uid://d3s0stuj8702r" path="res://game_ui.gd" id="1_ue6oa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2rst"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue6oa"]
+bg_color = Color(0.641013, 0.822521, 0.994194, 1)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_ue6oa")
+
+[node name="XpBar" type="ProgressBar" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_d2rst")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ue6oa")
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 21.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Level: 1"
+horizontal_alignment = 1

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch5k8x0ca10sq"]
+
+[ext_resource type="Script" uid="uid://bttxrflsei730" path="res://enemyScene/1_enemy.gd" id="1_bqmyg"]
+[ext_resource type="Texture2D" uid="uid://dqimqnn2xequ8" path="res://sprite/enemies/1enemy.png" id="1_syqi7"]
+[ext_resource type="PackedScene" uid="uid://dc7x0xi0uvxvo" path="res://scenes/small_xp.tscn" id="2_13obl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqmyg"]
+atlas = ExtResource("1_syqi7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13obl"]
+atlas = ExtResource("1_syqi7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h151f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqmyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13obl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_syqi7"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqmyg"]
+radius = 7.0
+height = 16.0
+
+[node name="1Enemy" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_bqmyg")
+speed = 10.0
+xp_drop_scene = ExtResource("2_13obl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h151f")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_syqi7")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("CapsuleShape2D_bqmyg")
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true

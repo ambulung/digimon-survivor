@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3lvucyfnevhi"]
+[gd_scene load_steps=8 format=3 uid="uid://3lvucyfnevhi"]
 
+[ext_resource type="Script" uid="uid://bovojcpdllt7x" path="res://world/level_1.gd" id="1_3ddsx"]
 [ext_resource type="PackedScene" uid="uid://cvrmuqhr3xrdk" path="res://digimonScene/digimon1/digimon1.tscn" id="1_4r4l3"]
+[ext_resource type="PackedScene" uid="uid://ch5k8x0ca10sq" path="res://enemyScene/1enemy.tscn" id="2_7edtc"]
 [ext_resource type="Texture2D" uid="uid://b67nyaj7y38nl" path="res://tileset/grass.png" id="2_8exih"]
+[ext_resource type="PackedScene" uid="uid://5ascoxogjx0w" path="res://game_ui.tscn" id="3_ew4qw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ew4qw"]
 texture = ExtResource("2_8exih")
@@ -11,6 +14,9 @@ texture = ExtResource("2_8exih")
 sources/0 = SubResource("TileSetAtlasSource_ew4qw")
 
 [node name="Level1" type="Node2D"]
+position = Vector2(-2, 0)
+script = ExtResource("1_3ddsx")
+enemy_scene = ExtResource("2_7edtc")
 
 [node name="grass" type="TileMap" parent="."]
 texture_filter = 1
@@ -20,3 +26,29 @@ layer_0/tile_data = PackedInt32Array(-131078, 0, 0, -65543, 0, 0, -7, 0, 0, 6552
 
 [node name="digimon1" parent="." instance=ExtResource("1_4r4l3")]
 position = Vector2(109, 158)
+
+[node name="GameUI" parent="." instance=ExtResource("3_ew4qw")]
+
+[node name="EnemySpawner" type="Timer" parent="."]
+autostart = true
+
+[node name="1Enemy" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(28, 181)
+
+[node name="1Enemy2" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(197, 190)
+
+[node name="1Enemy3" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(47, 124)
+
+[node name="1Enemy4" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(249, 116)
+
+[node name="1Enemy5" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(148, 217)
+
+[node name="1Enemy6" parent="." instance=ExtResource("2_7edtc")]
+position = Vector2(30, 255)
+
+[connection signal="level_changed" from="digimon1" to="GameUI" method="on_player_level_changed"]
+[connection signal="xp_changed" from="digimon1" to="GameUI" method="on_player_xp_changed"]
