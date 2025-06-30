@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dyjaxnggo56gb"]
+
+[ext_resource type="Texture2D" uid="uid://5i0ft8bq7r82" path="res://sprite/digimon1/2-koromon.png" id="1_ql4xi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhb8m"]
+atlas = ExtResource("1_ql4xi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa24y"]
+atlas = ExtResource("1_ql4xi")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pby2r"]
+atlas = ExtResource("1_ql4xi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joji8"]
+atlas = ExtResource("1_ql4xi")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhb8m")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa24y")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pby2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joji8")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pby2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joji8")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]

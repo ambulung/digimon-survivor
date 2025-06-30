@@ -1,0 +1,81 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cdcdregeneoki"]
+
+[ext_resource type="Texture2D" uid="uid://cxfgb1g61hgo" path="res://sprite/digimon1/1-botamon.png" id="1_3p658"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvwwe"]
+atlas = ExtResource("1_3p658")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u678"]
+atlas = ExtResource("1_3p658")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jonqr"]
+atlas = ExtResource("1_3p658")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajick"]
+atlas = ExtResource("1_3p658")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvwwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jonqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajick")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvwwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jonqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvwwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jonqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u678")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
