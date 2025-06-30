@@ -37,7 +37,7 @@ height = 16.0
 [node name="1Enemy" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 2
-collision_mask = 0
+collision_mask = 2
 script = ExtResource("1_bqmyg")
 speed = 10.0
 xp_drop_scene = ExtResource("2_13obl")

@@ -38,11 +38,8 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_8m5vj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 1.5
 autostart = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 z_index = 10
