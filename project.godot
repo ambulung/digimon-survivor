@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UpgradeManager="*res://scripts/UpgradeManager.gd"
+UpgradeManager="*res://scenes/UpgradeManager.tscn"
 
 [input]
 

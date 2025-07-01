@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://da4wmhk56j2qw"]
+
+[ext_resource type="Script" uid="uid://br324hv0lb2rg" path="res://scripts/UpgradeManager.gd" id="1_trfkf"]
+[ext_resource type="Script" uid="uid://ii2aokg4ai6n" path="res://scripts/Upgrade.gd" id="2_yimro"]
+[ext_resource type="Resource" uid="uid://b381w814kj3ky" path="res://resource/attack_upgrade.tres" id="3_dth8u"]
+[ext_resource type="Resource" uid="uid://5hcnbvbvwux3" path="res://resource/health_upgrade.tres" id="4_mocc2"]
+[ext_resource type="Resource" uid="uid://ejuhx52x12lq" path="res://resource/speed_upgrade.tres" id="5_4ydav"]
+
+[node name="UpgradeManager" type="Node"]
+script = ExtResource("1_trfkf")
+upgrade_pool = Array[ExtResource("2_yimro")]([ExtResource("3_dth8u"), ExtResource("4_mocc2"), ExtResource("5_4ydav")])
