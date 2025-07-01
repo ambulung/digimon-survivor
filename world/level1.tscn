@@ -10,7 +10,6 @@
 size = Vector2(473, 300)
 
 [node name="Level1" type="Node2D"]
-position = Vector2(-2, 0)
 script = ExtResource("1_3ddsx")
 enemy_scene = ExtResource("2_7edtc")
 tile_set = ExtResource("3_7edtc")

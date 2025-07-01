@@ -1,8 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch5k8x0ca10sq"]
+[gd_scene load_steps=14 format=3 uid="uid://ch5k8x0ca10sq"]
 
 [ext_resource type="Script" uid="uid://bttxrflsei730" path="res://enemyScene/1_enemy.gd" id="1_bqmyg"]
 [ext_resource type="Texture2D" uid="uid://dqimqnn2xequ8" path="res://sprite/enemies/1enemy.png" id="1_syqi7"]
 [ext_resource type="PackedScene" uid="uid://dc7x0xi0uvxvo" path="res://scenes/small_xp.tscn" id="2_13obl"]
+[ext_resource type="Shader" uid="uid://b3gx0ltdvjefc" path="res://enemyScene/1enemy.gdshader" id="3_h151f"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h151f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qlxlm"]
+noise = SubResource("FastNoiseLite_h151f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlxlm"]
+shader = ExtResource("3_h151f")
+shader_parameter/progress = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_qlxlm")
+shader_parameter/edge_color = Color(1, 0.8, 0.2, 1)
+shader_parameter/edge_width = 0.05
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h151f"]
+atlas = ExtResource("1_syqi7")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqmyg"]
 atlas = ExtResource("1_syqi7")
@@ -16,6 +33,14 @@ region = Rect2(16, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h151f")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bqmyg")
 }, {
 "duration": 1.0,
@@ -27,8 +52,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_syqi7"]
-radius = 5.0
-height = 10.0
+radius = 8.0
+height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqmyg"]
 radius = 7.0
@@ -43,12 +68,13 @@ speed = 10.0
 xp_drop_scene = ExtResource("2_13obl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_qlxlm")
 sprite_frames = SubResource("SpriteFrames_h151f")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_syqi7")
 
 [node name="DamageArea" type="Area2D" parent="."]
