@@ -29,6 +29,7 @@ shape = SubResource("RectangleShape2D_7edtc")
 [node name="GameUI" parent="." instance=ExtResource("3_ew4qw")]
 
 [node name="EnemySpawner" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
 
 [connection signal="level_changed" from="digimon1" to="GameUI" method="on_player_level_changed"]

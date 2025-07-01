@@ -15,6 +15,10 @@ run/main_scene="uid://3lvucyfnevhi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UpgradeManager="*res://scripts/UpgradeManager.gd"
+
 [input]
 
 move_left={

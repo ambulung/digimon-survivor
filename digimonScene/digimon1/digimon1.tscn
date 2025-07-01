@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvrmuqhr3xrdk"]
+[gd_scene load_steps=10 format=3 uid="uid://cvrmuqhr3xrdk"]
 
 [ext_resource type="Script" uid="uid://gee42008gf54" path="res://scripts/digimon1/digimon1.gd" id="1_uvwwe"]
 [ext_resource type="PackedScene" uid="uid://dua5fx5sn7b2r" path="res://digimonScene/digimon1/projectile1.tscn" id="2_10ol1"]
 [ext_resource type="SpriteFrames" uid="uid://cdcdregeneoki" path="res://digimonScene/digimon1/botamon.tres" id="3_267s6"]
 [ext_resource type="SpriteFrames" uid="uid://dyjaxnggo56gb" path="res://digimonScene/digimon1/koromon.tres" id="4_oa8c4"]
+[ext_resource type="PackedScene" uid="uid://buv2nve2g8s8w" path="res://scenes/LevelUpUI.tscn" id="5_oa8c4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m5vj"]
 radius = 4.0
@@ -27,6 +28,7 @@ botamon_attack_scene = ExtResource("2_10ol1")
 koromon_attack_scene = ExtResource("2_10ol1")
 botamon_sprite_frames = ExtResource("3_267s6")
 koromon_sprite_frames = ExtResource("4_oa8c4")
+level_up_ui_scene = ExtResource("5_oa8c4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_267s6")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ov7tekymygqc"]
+
+[ext_resource type="Script" uid="uid://bp7dys1q2mko1" path="res://scenes/UpgradeCard.gd" id="1_7gebi"]
+
+[node name="PanelContainer" type="Node2D"]
+script = ExtResource("1_7gebi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

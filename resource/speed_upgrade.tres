@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://ejuhx52x12lq"]
+
+[ext_resource type="Texture2D" uid="uid://cfhrksgo773ql" path="res://icon.svg" id="1_iodfs"]
+[ext_resource type="Script" uid="uid://ii2aokg4ai6n" path="res://scripts/Upgrade.gd" id="1_uvsvm"]
+
+[resource]
+script = ExtResource("1_uvsvm")
+id = "increase_speed"
+name = "Adrenaline Rush"
+description = "Permanently increase movement speed by 10%."
+icon = ExtResource("1_iodfs")
+metadata/_custom_type_script = "uid://ii2aokg4ai6n"
