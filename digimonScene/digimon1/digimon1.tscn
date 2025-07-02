@@ -24,8 +24,7 @@ texture_filter = 1
 collision_mask = 0
 script = ExtResource("1_uvwwe")
 speed = 30.0
-botamon_attack_scene = ExtResource("2_10ol1")
-koromon_attack_scene = ExtResource("2_10ol1")
+default_attack_scene = ExtResource("2_10ol1")
 botamon_sprite_frames = ExtResource("3_267s6")
 koromon_sprite_frames = ExtResource("4_oa8c4")
 level_up_ui_scene = ExtResource("5_oa8c4")
@@ -67,5 +66,7 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_267s6")
+
+[node name="WeaponContainer" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]

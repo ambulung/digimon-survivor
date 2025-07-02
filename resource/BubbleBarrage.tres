@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="WeaponUpgrade" load_steps=8 format=3 uid="uid://s7f4rmj8fx10"]
+
+[ext_resource type="Texture2D" uid="uid://cfhrksgo773ql" path="res://icon.svg" id="1_fjwrg"]
+[ext_resource type="Script" uid="uid://dmvuav1sa8uf2" path="res://scripts/WeaponUpgrade.gd" id="1_t10f3"]
+[ext_resource type="Script" uid="uid://6f6ajkwcluh6" path="res://scripts/WeaponLevel.gd" id="2_jkm3c"]
+[ext_resource type="PackedScene" uid="uid://b0rmenvfmpt7" path="res://scenes/BubbleWeapon.tscn" id="4_fveww"]
+
+[sub_resource type="Resource" id="Resource_fjwrg"]
+script = ExtResource("2_jkm3c")
+description = "Fires bubbles at nearby enemies."
+metadata/_custom_type_script = "uid://6f6ajkwcluh6"
+
+[sub_resource type="Resource" id="Resource_jkm3c"]
+script = ExtResource("2_jkm3c")
+description = "Fires bubbles at nearby enemies."
+metadata/_custom_type_script = "uid://6f6ajkwcluh6"
+
+[sub_resource type="Resource" id="Resource_fveww"]
+script = ExtResource("2_jkm3c")
+description = "Fires bubbles at nearby enemies."
+metadata/_custom_type_script = "uid://6f6ajkwcluh6"
+
+[resource]
+script = ExtResource("1_t10f3")
+id = "bubble_barrage"
+name = "Bubble Barrage"
+weapon_scene = ExtResource("4_fveww")
+icon = ExtResource("1_fjwrg")
+levels = Array[ExtResource("2_jkm3c")]([SubResource("Resource_fjwrg"), SubResource("Resource_jkm3c"), SubResource("Resource_fveww")])
+metadata/_custom_type_script = "uid://dmvuav1sa8uf2"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0rmenvfmpt7"]
+
+[ext_resource type="Script" uid="uid://bkvbbmspj3iv8" path="res://scenes/bubble_weapon.gd" id="1_yiy24"]
+
+[node name="BubbleWeapon" type="Node2D"]
+script = ExtResource("1_yiy24")
+
+[node name="Timer" type="Timer" parent="."]
